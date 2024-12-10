@@ -13,5 +13,28 @@ datasource db {
 model Ingredients {
   id     String @id
   name   String
-  type   String
+}
+
+model Methods {
+  id     String @id
+  name   String
+}
+
+model Steps {
+  id     String @id
+  step   String
+}
+
+model Recipes {
+  id     String @id
+  name   String
+  steps  String
+  ingredients String
+  tags   String
+  methods String
+}
+
+model Tags {
+  id     String @id
+  name   String
 }

@@ -7,6 +7,12 @@
   --foreground: white;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .main-navigation-container {
   padding: 20px;
   margin-bottom: 25px;
@@ -33,8 +39,94 @@
 
 .main-styles {
   margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 
   h1 {
-    font-size: 25px;
+    font-size: 35px;
   }
+
+  p {
+    font-size: 25px;
+    width: 30%;
+  }
+
+  image {
+    margin-top: 10%;
+  }
+}
+
+.generate-form {
+  margin: 50px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid black;
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 25px;
+    padding: 10px;
+    margin: 10px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: palevioletred;
+    color: white;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  input {
+    border: 2px solid palevioletred;
+  }
+
+  button {
+    padding: 8px;
+    background-color: rgb(141, 141, 206);
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    width: 10%;
+  }
+
+  li {
+    display: flex;
+    margin: 5px;
+    gap: 10px;
+  }
+
+  input {
+    display: flex;
+    margin: 5px;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+.recipe-gen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.search-bar {
+  border: 1px solid palevioletred;
+  border-radius: 10px;   
+  padding-top: 9px;  
+  padding-bottom: 9px;  
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 40px;
+  width: 100%;
 }

@@ -1,15 +1,21 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Dashboard from './components/Dashboard'
 
-export default function Home() {
+export default async function Home() {
   //TODO:
-  // - seed DB
-  // - create rest of tables for DB
-  return (
-    <main className="main-styles">
-      <h1>Dashboard</h1>
-      <div>
+  // - make animations
 
-      </div>
-    </main>
+  return (
+    <>
+      <main className='generate-form'>
+        <Dashboard/>
+        <Image
+          src="/chef.jpg"
+          width={400}
+          height={400}
+          alt="chef pic"
+        />
+      </main>
+    </>
   );
 }

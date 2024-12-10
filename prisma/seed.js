@@ -12,11 +12,11 @@ const seed = async () => {
   // clean up before the seeding (optional)
   await prisma.post.deleteMany();
 
-  for (const post of initialPosts) {
-    await prisma.post.create({
-      data: post,
-    });
-  }
+  // for (const post of initialPosts) {
+  //   await prisma.post.create({
+  //     data: post,
+  //   });
+  // }
 };
 
 seed();
