@@ -11,22 +11,22 @@ datasource db {
 }
 
 model Ingredients {
-  id     String @id
+  id     Int @id @default(autoincrement())
   name   String
 }
 
 model Methods {
-  id     String @id
+  id     Int @id @default(autoincrement())
   name   String
 }
 
 model Steps {
-  id     String @id
+  id     Int @id @default(autoincrement())
   step   String
 }
 
 model Recipes {
-  id     String @id
+  id     Int @id @default(autoincrement())
   name   String
   steps  String
   ingredients String
@@ -35,6 +35,6 @@ model Recipes {
 }
 
 model Tags {
-  id     String @id
+  id     Int @id @default(autoincrement())
   name   String
 }
