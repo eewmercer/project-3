@@ -5,19 +5,14 @@ import { redirect } from 'next/navigation';
 
 export default async function updateRecipe(formData) {
     const prisma = new PrismaClient() 
-
-    await prisma.recipes.update({
-        where: {
-            id: Number(formData.get('id')),
-        },
-        data: {
-            name: String(formData.get('name')),
-            steps: String(formData.get('steps')),
-            ingredients: String(formData.get('ingredients')),
-            tags: String(formData.get('tags')),
-            methods: String(formData.get('methods')),
-        }
-    })
+    if (!formData == null || !formData == undefined) {
+        await prisma.recipes.create({
+            data: {
+                name: String(formData.get('name')),
+                recipe: String(formData.get('recipe'))
+            }
+        })
+    }
     
-    redirect('/individual')
+    // redirect('/individual')
 }

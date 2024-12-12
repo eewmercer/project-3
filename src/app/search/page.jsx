@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useState } from 'react';
+// import Recipes from '../allRecipes'
 
 export default async function SearchRecipes() {
   const [searchInput, setSearchInput] = useState();
@@ -13,6 +14,7 @@ export default async function SearchRecipes() {
           setSearchInput(e.target.value);
         }}/>
       </div>
+      {/* <Recipes/> */}
     </main>
   )
 }

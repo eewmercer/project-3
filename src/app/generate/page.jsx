@@ -1,39 +1,38 @@
 'use client'
-import React from 'react'
-import { useState } from 'react';
+import React, { useActionState } from 'react'
+import generateRecipe from '../createRecipe'
+import DisplayRecipe from '../components/DisplayRecipe'
 
 export default function GenerateRecipes() {
-  const [inputValue, setInputValue] = useState('');
+  const [state, formAction] = useActionState(generateRecipe, null)
 
   return (
     <>
-      <form className="generate-form">
-        {/* onSubmit={handleSubmit} */}
-        <h1>Generate Your Own Recipes</h1>
-        <div>
-          <div className='recipe-gen'>
-            <h2>Recipe: </h2>
-            <button>GENERATE</button>
-          </div>
-          <div>
-            {/* TODO
-              - filled in recipe template
-            */}
-          </div>
+      <form className="generate-form" action={formAction}>
+        <div className='heading'>
+          <h2>Recipe:</h2>
         </div>
         <div>
-          <h2>Final Touches: </h2>
-          <div>
+          <label htmlFor="tag">Enter a tag to base your recipe on: </label>
+          <input name="tag" type="text" placeholder='sweet'/>
+        </div>
+        <div>
+            <label htmlFor="steps">Enter number of steps for your recipe: </label>
+            <input name="steps" type="text" placeholder="5"/>
+        </div>
+        <div>
             <label htmlFor="name">Enter recipe name: </label>
-            <input type="text" placeholder="banana pudding"/>
+            <input name="name" type="text" placeholder="banana pudding"/>
           </div>
-          <div>
-            <label htmlFor="name">Upload image: </label>
-            <input type="text" placeholder="banana pudding"/>
-          </div>
-          <button type="submit">Save Recipe</button>
-        </div>
+        <button>GENERATE</button>
       </form>
+      <div className='generate-form'>
+        <div>
+        {state && <DisplayRecipe
+          recipeTemplate={state}
+        />}
+        </div>
+      </div>
     </>
   );
 }

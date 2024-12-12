@@ -10,14 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Ingredients {
-  id     Int @id @default(autoincrement())
-  name   String
-}
-
 model Methods {
   id     Int @id @default(autoincrement())
   name   String
+  time   String
 }
 
 model Steps {
@@ -28,13 +24,16 @@ model Steps {
 model Recipes {
   id     Int @id @default(autoincrement())
   name   String
-  steps  String
-  ingredients String
-  tags   String
-  methods String
+  recipe String
 }
 
 model Tags {
   id     Int @id @default(autoincrement())
   name   String
+}
+
+model Ingredients {
+  id        Int @id @default(autoincrement())
+  name      String
+  tags      String
 }

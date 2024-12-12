@@ -1,11 +1,12 @@
 'use server'
 import { PrismaClient } from "@prisma/client";
-export const prisma = new PrismaClient();
 
 export default async function updateTags(formData) {
+    const prisma = new PrismaClient();
+    // await prisma.ingredients.deleteMany()
     await prisma.tags.create({
         data: {
-            name: formData.get('tagName')
+            name: String(formData.get('tagName'))
         }
     })
 }
